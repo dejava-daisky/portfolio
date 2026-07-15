@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="박건률 백엔드 개발자 포트폴리오" />
+  <title>박건률 | Backend Developer</title>
+  <style>
+    :root{
+      --bg:#070b16;--bg2:#0b1020;--panel:#11182b;--panel2:#151e34;
+      --text:#eef3ff;--muted:#9aa7c2;--line:rgba(255,255,255,.10);
+      --blue:#66a6ff;--purple:#9d7cff;--cyan:#56e0d6;--green:#72e6a5;
+      --shadow:0 24px 80px rgba(0,0,0,.35);--radius:22px;--max:1180px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:
+      radial-gradient(circle at 10% 5%,rgba(102,166,255,.12),transparent 27%),
+      radial-gradient(circle at 88% 18%,rgba(157,124,255,.13),transparent 24%),
+      var(--bg);color:var(--text);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
+    .nav-shell{position:sticky;top:0;z-index:40;background:rgba(7,11,22,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:-.03em;font-size:20px}.logo i{font-style:normal;color:var(--cyan)}
+    .nav-links{display:flex;gap:26px;color:var(--muted);font-size:14px;font-weight:700}.nav-links a:hover{color:#fff}.nav-actions{display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:11px 16px;font-weight:800;background:rgba(255,255,255,.04);color:#fff;transition:.2s;cursor:pointer}.btn:hover{transform:translateY(-2px);border-color:rgba(102,166,255,.5)}
+    .btn.primary{border:0;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 14px 35px rgba(102,166,255,.18)}
+    .hero{padding:92px 0 52px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .status{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(114,230,165,.24);border-radius:999px;background:rgba(114,230,165,.07);color:#b9f6d2;font-size:13px;font-weight:800}.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(114,230,165,.10)}
+    h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-.06em;margin:24px 0 22px}.gradient{background:linear-gradient(90deg,#fff 0%,#9ed0ff 40%,#b5a2ff 76%,#72e6d7 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{font-size:19px;color:var(--muted);max-width:720px}.hero-copy strong{color:#fff}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.stat{padding:17px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}.stat b{display:block;font-size:24px}.stat span{font-size:12px;color:var(--muted)}
+    .terminal{position:relative;padding:22px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(160deg,rgba(22,32,55,.95),rgba(11,16,32,.97));box-shadow:var(--shadow);overflow:hidden}
+    .terminal:before{content:"";position:absolute;inset:-70px auto auto -70px;width:180px;height:180px;border-radius:50%;background:rgba(102,166,255,.13);filter:blur(20px)}
+    .term-head{display:flex;align-items:center;gap:7px;padding-bottom:16px;border-bottom:1px solid var(--line)}.term-dot{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.term-dot:nth-child(2){background:#ffd166}.term-dot:nth-child(3){background:#69db7c}.term-title{margin-left:auto;color:#7f8ba5;font-size:12px}
+    pre{margin:20px 0 0;white-space:pre-wrap;font:14px/1.85 "JetBrains Mono",Consolas,monospace;color:#d9e4ff}.c-key{color:#8dc7ff}.c-str{color:#aef1c8}.c-arr{color:#d4b4ff}.c-com{color:#71809f}
+    section{padding:72px 0}.section-tag{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.section-head h2{font-size:40px;line-height:1.1;letter-spacing:-.04em;margin:6px 0}.section-head p{max-width:650px;color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.about-card,.skill-card,.project,.contact{border:1px solid var(--line);background:linear-gradient(145deg,rgba(20,28,49,.9),rgba(12,18,34,.92));border-radius:var(--radius)}
+    .about-card{padding:28px}.about-card h3{font-size:27px;margin:0 0 12px}.about-card p{color:var(--muted)}.highlight{color:#fff}.focus-list{display:grid;gap:10px;margin-top:22px}.focus{display:flex;gap:12px;padding:13px;border-radius:13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06)}.focus b{color:var(--cyan)}
+    .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.skill-card{padding:22px}.skill-card h3{margin:0 0 4px;font-size:17px}.skill-card p{margin:0;color:var(--muted);font-size:13px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chip{padding:7px 10px;border:1px solid rgba(255,255,255,.09);border-radius:9px;background:rgba(255,255,255,.04);color:#dbe6ff;font-size:12px;font-weight:800}
+    .projects{display:grid;gap:18px}.project{display:grid;grid-template-columns:.78fr 1.22fr;overflow:hidden;min-height:390px}.project-art{position:relative;padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#152c50,#0b1528)}.project:nth-child(2) .project-art{background:linear-gradient(145deg,#153c35,#0c201e)}.project:nth-child(3) .project-art{background:linear-gradient(145deg,#3d2054,#1b1027)}
+    .project-no{font-size:12px;font-weight:900;letter-spacing:.14em;color:rgba(255,255,255,.58)}.project-art h3{font-size:42px;line-height:1.02;letter-spacing:-.05em;margin:14px 0}.project-art p{color:rgba(255,255,255,.75)}
+    .mock-window{border:1px solid rgba(255,255,255,.16);border-radius:15px;background:rgba(255,255,255,.07);padding:14px}.mock-nav{display:flex;gap:5px;margin-bottom:12px}.mock-nav span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35)}.mock-row{height:9px;border-radius:10px;background:rgba(255,255,255,.17);margin:7px 0}.mock-row.short{width:48%}.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:11px}.mock-grid i{height:46px;border-radius:9px;background:rgba(255,255,255,.12)}
+    .project-body{padding:30px}.project-body .desc{color:var(--muted);margin-top:0}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.meta span{font-size:12px;padding:7px 9px;border-radius:8px;background:rgba(102,166,255,.08);border:1px solid rgba(102,166,255,.18);color:#c8ddff;font-weight:800}.project-body h4{font-size:15px;margin:22px 0 8px}.bullets{display:grid;gap:9px;color:#c4cee1;font-size:14px}.bullets div{padding-left:18px;position:relative}.bullets div:before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple))}.project-links{display:flex;gap:16px;margin-top:24px}.project-links a{font-size:14px;font-weight:900;color:#9dccff}.project-links a:hover{text-decoration:underline}
+        .contact{padding:36px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(135deg,rgba(29,46,82,.94),rgba(31,23,62,.94))}.contact h2{font-size:34px;margin:0 0 8px}.contact p{color:#b6c3dc;margin:0}
+    footer{padding:20px 0 55px;color:#71809a;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:18px}
+
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 24px))}.hero{padding-top:60px}h1{font-size:49px}.hero-copy{font-size:16px}.stats,.skill-grid{grid-template-columns:1fr}.section-head,.contact,.footer-row{align-items:flex-start;flex-direction:column}.section-head h2{font-size:32px}.project-body,.project-art{padding:22px}.project-art h3{font-size:36px}.nav-actions .btn:first-child{display:none}}
+  </style>
+</head>
+<body>
+<header class="nav-shell">
+  <div class="wrap nav">
+    <a class="logo" href="#top">PARK<i>.GEONRYUL</i></a>
+    <nav class="nav-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+    <div class="nav-actions"><a class="btn" href="https://github.com/dejava-daisky" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn primary" href="#projects">View Work</a></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="status"><span class="pulse"></span> Backend Developer · Service Builder</div>
+        <h1><span class="gradient">아이디어를 서비스로</span><br>끝까지 구현합니다.</h1>
+        <p class="hero-copy">Node.js와 MySQL을 중심으로 API, 데이터베이스, 외부 서비스 연동과 배포 환경을 구현해 왔습니다. <strong>기능 하나가 아니라 사용자가 실제로 이용할 수 있는 서비스 전체를 완성하는 개발자</strong>를 지향합니다.</p>
+        <div class="hero-actions"><a class="btn primary" href="#projects">대표 프로젝트 보기</a><a class="btn" href="https://github.com/dejava-daisky" target="_blank" rel="noreferrer">GitHub 보기 ↗</a></div>
+        <div class="stats"><div class="stat"><b>3</b><span>대표 프로젝트</span></div><div class="stat"><b>API</b><span>외부 데이터 연동</span></div><div class="stat"><b>Deploy</b><span>배포·운영 경험</span></div></div>
+      </div>
+      <aside class="terminal" aria-label="개발자 소개 코드 카드">
+        <div class="term-head"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">developer.js</span></div>
+<pre><span class="c-key">const</span> geonryul = {
+  role: <span class="c-str">"Backend Developer"</span>,
+  focus: [
+    <span class="c-arr">"API & Data Flow"</span>,
+    <span class="c-arr">"Database Design"</span>,
+    <span class="c-arr">"Deployment & Operations"</span>
+  ],
+  stack: {
+    backend: <span class="c-str">"Node.js"</span>,
+    database: <span class="c-str">"MySQL"</span>,
+    deploy: <span class="c-str">"Docker / Cloud"</span>,
+    ai: <span class="c-str">"External API / AI Integration"</span>
+  },
+  motto: <span class="c-str">"구조를 이해하고 끝까지 완성하기"</span>
+};
+
+<span class="c-com">// Built from real projects, not a skill list.</span></pre>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div><div class="section-tag">01 · About</div><h2>기능을 넘어 서비스의 흐름을 봅니다.</h2></div><p>사용자의 요청이 API와 데이터베이스를 거쳐 결과로 돌아오고, 배포 이후 안정적으로 운영되는 과정까지 하나의 서비스 흐름으로 이해하려 합니다.</p></div>
+      <div class="about-grid">
+        <article class="about-card"><h3>제가 중요하게 보는 것</h3><p>구현 자체뿐 아니라 <span class="highlight">왜 이 구조를 선택했는지</span>, 변화에 어떻게 대응할지, 문제가 생겼을 때 어디서부터 확인할지를 설명할 수 있는 개발을 중요하게 생각합니다.</p><div class="focus-list"><div class="focus"><b>01</b><span>아이디어를 실제 사용 가능한 서비스로 완성</span></div><div class="focus"><b>02</b><span>API·DB·배포를 하나의 구조로 연결</span></div><div class="focus"><b>03</b><span>근거와 재현을 바탕으로 문제 해결</span></div></div></article>
+        <div class="skill-grid" id="skills"><article class="skill-card"><h3>Backend</h3><p>요청 처리, JSON 응답, CRUD와 외부 API 연동</p><div class="chips"><span class="chip">Node.js</span><span class="chip">REST API</span><span class="chip">Netlify Functions</span></div></article><article class="skill-card"><h3>Database</h3><p>서비스 기능을 기준으로 한 데이터 구조 설계</p><div class="chips"><span class="chip">MySQL</span><span class="chip">Schema</span><span class="chip">CRUD</span></div></article><article class="skill-card"><h3>Deployment</h3><p>동일한 실행환경 구성과 배포 후 오류 확인</p><div class="chips"><span class="chip">Docker</span><span class="chip">Compose</span><span class="chip">Nginx</span><span class="chip">Cloud</span></div></article><article class="skill-card"><h3>AI Integration</h3><p>외부 AI와 데이터를 실제 서비스 기능으로 연결</p><div class="chips"><span class="chip">Gemini API</span><span class="chip">Prompt JSON</span><span class="chip">Validation</span></div></article></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div><div class="section-tag">02 · Selected Work</div><h2>대표 프로젝트</h2></div><p>완성된 화면뿐 아니라 문제 정의, 설계 판단, 구현 과정과 운영 경험을 함께 보여주는 프로젝트를 선별했습니다.</p></div>
+      <div class="projects">
+        <article class="project" id="er-dodge"><div class="project-art"><div><div class="project-no">PROJECT 01 · DATA SERVICE</div><h3>ER-Dodge</h3><p>게임 데이터를 분석해 사용자가 다음 경기에서 취할 행동을 제안하는 웹서비스</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row"></div><div class="mock-row short"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">외부 게임 데이터를 수집·정규화하고 사용자 지표와 비교해 결과를 반환합니다. 기준 통계가 일시적으로 불안정해도 서비스가 멈추지 않도록 자동 갱신, 캐시, 폴백 구조를 적용했습니다.</p><div class="meta"><span>Node.js</span><span>Netlify Functions</span><span>GitHub Actions</span><span>External API</span></div><h4>담당 및 설계</h4><div class="bullets"><div>외부 데이터 수집과 화면용 JSON 구조 설계</div><div>6시간 주기 기준 데이터 자동 갱신</div><div>원격 데이터 실패 시 캐시·번들 데이터로 대체</div><div>AI 피드백 기능을 구조화된 응답 형태로 확장</div></div><h4>문제와 해결</h4><div class="bullets"><div>외부 기준 데이터가 불안정할 때 서비스 전체가 멈추지 않도록 단계별 폴백 구조를 적용했습니다.</div><div>분석 결과가 단순 수치 설명에 그치지 않도록 사용자가 다음 경기에서 실행할 행동 중심으로 출력 구조를 개선했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/er-dodge" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#contact">상세 설명 문의 →</a></div></div></article>
+
+        <article class="project" id="kiosk"><div class="project-art"><div><div class="project-no">PROJECT 02 · DEPLOYMENT SYSTEM</div><h3>Student Progress Kiosk</h3><p>학교 키오스크 PC에서 학생별 프로젝트 진행상황을 조회·관리하는 현장형 시스템</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row short"></div><div class="mock-row"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">공개 키오스크와 관리자 화면이 같은 데이터베이스를 사용하도록 구성하고, 신규 PC에서도 같은 환경으로 실행할 수 있도록 애플리케이션과 DB를 컨테이너화했습니다.</p><div class="meta"><span>Node.js</span><span>MySQL</span><span>Docker Compose</span><span>Nginx</span></div><h4>담당 및 설계</h4><div class="bullets"><div>학생·프로젝트·진행단계·피드백 데이터 구조 설계</div><div>조회 화면과 관리자 CRUD 기능 구현</div><div>App·DB·Nginx를 Docker Compose로 구성</div><div>포트·환경변수·볼륨·서비스 의존성 설정</div></div><h4>문제와 해결</h4><div class="bullets"><div>PC마다 설치 환경이 달라지는 문제를 줄이기 위해 앱·DB·프록시를 하나의 Compose 구성으로 통합했습니다.</div><div>DB 초기화와 서비스 시작 순서에서 발생한 오류를 헬스체크와 의존성 설정으로 정리했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/kiosk" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://github.com/dejava-daisky/kiosk" target="_blank" rel="noreferrer">구성 파일 확인 →</a></div></div></article>
+
+        <article class="project" id="assembly"><div class="project-art"><div><div class="project-no">PROJECT 03 · PUBLIC DATA</div><h3>Assembly Tracker</h3><p>국회 공개 API를 통합해 의원과 법안 활동을 탐색하는 데이터 대시보드</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row"></div><div class="mock-row"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">서로 다른 공공 API의 응답 형식을 공통 데이터 구조로 정리하고, 검색·필터·차트에서 동일한 기준을 사용할 수 있도록 가공했습니다.</p><div class="meta"><span>JavaScript</span><span>Public API</span><span>Data Normalization</span><span>Charts</span></div><h4>담당 및 설계</h4><div class="bullets"><div>여러 공개 API를 하나의 사용자 흐름으로 통합</div><div>서버 경유 방식으로 인증키 노출 방지</div><div>의원·법안 응답을 화면용 공통 구조로 변환</div><div>검색·필터·통계 시각화 구현</div></div><h4>문제와 해결</h4><div class="bullets"><div>API마다 다른 필드명과 응답 형식을 공통 모델로 정규화해 화면 로직의 중복을 줄였습니다.</div><div>인증키를 브라우저에 노출하지 않도록 서버를 경유하는 요청 구조로 변경했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/assembly-tracker" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact"><div class="wrap"><div class="contact"><div><h2>프로젝트의 구현 내용을 직접 확인해 보세요.</h2><p>각 프로젝트의 저장소에서 구조, 설정 파일, 데이터 처리 방식과 배포 구성을 확인할 수 있습니다.</p></div><div class="hero-actions"><a class="btn primary" href="https://github.com/dejava-daisky" target="_blank" rel="noreferrer">GitHub 전체 보기 ↗</a><a class="btn" href="#top">처음으로 ↑</a></div></div></div></section>
+</main>
+
+<footer><div class="wrap footer-row"><span>© 2026 Park Geonryul. Portfolio draft.</span><span>Backend · API · Database · Deployment · Service Integration</span></div></footer>
+
+
+</body>
+</html>
