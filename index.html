@@ -29,6 +29,7 @@
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.stat{padding:17px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}.stat b{display:block;font-size:24px}.stat span{font-size:12px;color:var(--muted)}
     .terminal{position:relative;padding:22px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(160deg,rgba(22,32,55,.95),rgba(11,16,32,.97));box-shadow:var(--shadow);overflow:hidden}
     .terminal:before{content:"";position:absolute;inset:-70px auto auto -70px;width:180px;height:180px;border-radius:50%;background:rgba(102,166,255,.13);filter:blur(20px)}
+    .hero-visual{position:relative;padding:0 34px 58px 0}.hero-visual .terminal{z-index:1}.hero-visual pre{padding-bottom:82px}.hero-illustration{position:absolute;right:0;bottom:0;z-index:2;width:220px;margin:0;padding:7px;border:1px solid rgba(255,255,255,.18);border-radius:17px;background:rgba(12,18,34,.9);box-shadow:0 18px 44px rgba(0,0,0,.38);transform:rotate(2deg);transition:transform .25s ease}.hero-illustration:hover{transform:rotate(0deg) translateY(-4px)}.hero-illustration img{display:block;width:100%;height:auto;border-radius:11px}
     .term-head{display:flex;align-items:center;gap:7px;padding-bottom:16px;border-bottom:1px solid var(--line)}.term-dot{width:10px;height:10px;border-radius:50%;background:#ff6b6b}.term-dot:nth-child(2){background:#ffd166}.term-dot:nth-child(3){background:#69db7c}.term-title{margin-left:auto;color:#7f8ba5;font-size:12px}
     pre{margin:20px 0 0;white-space:pre-wrap;font:14px/1.85 "JetBrains Mono",Consolas,monospace;color:#d9e4ff}.c-key{color:#8dc7ff}.c-str{color:#aef1c8}.c-arr{color:#d4b4ff}.c-com{color:#71809f}
     section{padding:72px 0}.section-tag{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.section-head h2{font-size:40px;line-height:1.1;letter-spacing:-.04em;margin:6px 0}.section-head p{max-width:650px;color:var(--muted);margin:0}
@@ -42,7 +43,8 @@
         .contact{padding:36px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(135deg,rgba(29,46,82,.94),rgba(31,23,62,.94))}.contact h2{font-size:34px;margin:0 0 8px}.contact p{color:#b6c3dc;margin:0}
     footer{padding:20px 0 55px;color:#71809a;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:18px}
 
-    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 24px))}.hero{padding-top:60px}h1{font-size:49px}.hero-copy{font-size:16px}.stats,.skill-grid{grid-template-columns:1fr}.section-head,.contact,.footer-row{align-items:flex-start;flex-direction:column}.section-head h2{font-size:32px}.project-body,.project-art{padding:22px}.project-art h3{font-size:36px}.nav-actions .btn:first-child{display:none}}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:620px;margin:0 auto;width:100%}}
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 24px))}.hero{padding-top:60px}h1{font-size:49px}.hero-copy{font-size:16px}.stats,.skill-grid{grid-template-columns:1fr}.hero-visual{padding:0 14px 46px 0}.hero-illustration{width:170px}.section-head,.contact,.footer-row{align-items:flex-start;flex-direction:column}.section-head h2{font-size:32px}.project-body,.project-art{padding:22px}.project-art h3{font-size:36px}.nav-actions .btn:first-child{display:none}}
   </style>
 </head>
 <body>
@@ -64,6 +66,7 @@
         <div class="hero-actions"><a class="btn primary" href="#projects">대표 프로젝트 보기</a><a class="btn" href="https://github.com/dejava-daisky" target="_blank" rel="noreferrer">GitHub 보기 ↗</a></div>
         <div class="stats"><div class="stat"><b>3</b><span>대표 프로젝트</span></div><div class="stat"><b>API</b><span>외부 데이터 연동</span></div><div class="stat"><b>Deploy</b><span>배포·운영 경험</span></div></div>
       </div>
+      <div class="hero-visual">
       <aside class="terminal" aria-label="개발자 소개 코드 카드">
         <div class="term-head"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">developer.js</span></div>
 <pre><span class="c-key">const</span> kunryul = {
@@ -76,7 +79,7 @@
   stack: {
     backend: <span class="c-str">"Node.js"</span>,
     database: <span class="c-str">"MySQL"</span>,
-    deploy: <span class="c-str">"Docker / Cloud"</span>,
+    deploy: <span class="c-str">"Docker / OVHcloud"</span>,
     ai: <span class="c-str">"External API / AI Integration"</span>
   },
   motto: <span class="c-str">"구조를 이해하고 끝까지 완성하기"</span>
@@ -84,6 +87,10 @@
 
 <span class="c-com">// Built from real projects, not a skill list.</span></pre>
       </aside>
+      <figure class="hero-illustration">
+        <img src="type-computer-squid-girl.webp" alt="컴퓨터로 작업 중인 캐릭터 일러스트" width="350" height="197" />
+      </figure>
+      </div>
     </div>
   </section>
 
@@ -92,7 +99,7 @@
       <div class="section-head"><div><div class="section-tag">01 · About</div><h2>기능을 넘어 서비스의 흐름을 봅니다.</h2></div><p>사용자의 요청이 API와 데이터베이스를 거쳐 결과로 돌아오고, 배포 이후 안정적으로 운영되는 과정까지 하나의 서비스 흐름으로 이해하려 합니다.</p></div>
       <div class="about-grid">
         <article class="about-card"><h3>제가 중요하게 보는 것</h3><p>구현 자체뿐 아니라 <span class="highlight">왜 이 구조를 선택했는지</span>, 변화에 어떻게 대응할지, 문제가 생겼을 때 어디서부터 확인할지를 설명할 수 있는 개발을 중요하게 생각합니다.</p><div class="focus-list"><div class="focus"><b>01</b><span>아이디어를 실제 사용 가능한 서비스로 완성</span></div><div class="focus"><b>02</b><span>API·DB·배포를 하나의 구조로 연결</span></div><div class="focus"><b>03</b><span>근거와 재현을 바탕으로 문제 해결</span></div></div></article>
-        <div class="skill-grid" id="skills"><article class="skill-card"><h3>Backend</h3><p>요청 처리, JSON 응답, CRUD와 외부 API 연동</p><div class="chips"><span class="chip">Node.js</span><span class="chip">REST API</span><span class="chip">Netlify Functions</span></div></article><article class="skill-card"><h3>Database</h3><p>서비스 기능을 기준으로 한 데이터 구조 설계</p><div class="chips"><span class="chip">MySQL</span><span class="chip">Schema</span><span class="chip">CRUD</span></div></article><article class="skill-card"><h3>Deployment</h3><p>동일한 실행환경 구성과 배포 후 오류 확인</p><div class="chips"><span class="chip">Docker</span><span class="chip">Compose</span><span class="chip">Nginx</span><span class="chip">Cloud</span></div></article><article class="skill-card"><h3>AI Integration</h3><p>외부 AI와 데이터를 실제 서비스 기능으로 연결</p><div class="chips"><span class="chip">Gemini API</span><span class="chip">Prompt JSON</span><span class="chip">Validation</span></div></article></div>
+        <div class="skill-grid" id="skills"><article class="skill-card"><h3>Backend</h3><p>요청 처리, JSON 응답, CRUD와 외부 API 연동</p><div class="chips"><span class="chip">Node.js</span><span class="chip">REST API</span><span class="chip">External API</span></div></article><article class="skill-card"><h3>Database</h3><p>서비스 기능을 기준으로 한 데이터 구조 설계</p><div class="chips"><span class="chip">MySQL</span><span class="chip">Schema</span><span class="chip">CRUD</span></div></article><article class="skill-card"><h3>Deployment</h3><p>동일한 실행환경 구성과 배포 후 오류 확인</p><div class="chips"><span class="chip">Docker</span><span class="chip">Compose</span><span class="chip">Nginx</span><span class="chip">OVHcloud</span></div></article><article class="skill-card"><h3>AI Integration</h3><p>외부 AI와 데이터를 실제 서비스 기능으로 연결</p><div class="chips"><span class="chip">Gemini API</span><span class="chip">Prompt JSON</span><span class="chip">Validation</span></div></article></div>
       </div>
     </div>
   </section>
@@ -101,7 +108,7 @@
     <div class="wrap">
       <div class="section-head"><div><div class="section-tag">02 · Selected Work</div><h2>대표 프로젝트</h2></div><p>완성된 화면뿐 아니라 문제 정의, 설계 판단, 구현 과정과 운영 경험을 함께 보여주는 프로젝트를 선별했습니다.</p></div>
       <div class="projects">
-        <article class="project" id="er-dodge"><div class="project-art"><div><div class="project-no">PROJECT 01 · DATA SERVICE</div><h3>ER-Dodge</h3><p>게임 데이터를 분석해 사용자가 다음 경기에서 취할 행동을 제안하는 웹서비스</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row"></div><div class="mock-row short"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">외부 게임 데이터를 수집·정규화하고 사용자 지표와 비교해 결과를 반환합니다. 기준 통계가 일시적으로 불안정해도 서비스가 멈추지 않도록 자동 갱신, 캐시, 폴백 구조를 적용했습니다.</p><div class="meta"><span>Node.js</span><span>Netlify Functions</span><span>GitHub Actions</span><span>External API</span><span>Live Service</span></div><h4>담당 및 설계</h4><div class="bullets"><div>외부 데이터 수집과 화면용 JSON 구조 설계</div><div>6시간 주기 기준 데이터 자동 갱신</div><div>원격 데이터 실패 시 캐시·번들 데이터로 대체</div><div>AI 피드백 기능을 구조화된 응답 형태로 확장</div></div><h4>문제와 해결</h4><div class="bullets"><div>외부 기준 데이터가 불안정할 때 서비스 전체가 멈추지 않도록 단계별 폴백 구조를 적용했습니다.</div><div>분석 결과가 단순 수치 설명에 그치지 않도록 사용자가 다음 경기에서 실행할 행동 중심으로 출력 구조를 개선했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/er-dodge" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://niah.site/" target="_blank" rel="noreferrer">서비스 바로가기 ↗</a></div></div></article>
+        <article class="project" id="er-dodge"><div class="project-art"><div><div class="project-no">PROJECT 01 · DATA SERVICE</div><h3>ER-Dodge</h3><p>게임 데이터를 분석해 사용자가 다음 경기에서 취할 행동을 제안하는 웹서비스</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row"></div><div class="mock-row short"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">외부 게임 데이터를 수집·정규화해 사용자 전적을 기준 통계와 비교하고 행동 중심의 분석 결과를 제공합니다. OVHcloud VPS에 Docker 기반 실행 환경을 구성하고 Nginx를 앞단에 두어 도메인으로 직접 운영하는 서비스입니다.</p><div class="meta"><span>Node.js</span><span>OVHcloud VPS</span><span>Docker</span><span>Nginx</span><span>External API</span><span>Live Service</span></div><h4>담당 및 설계</h4><div class="bullets"><div>외부 게임 API와 기준 데이터 수집·정규화</div><div>사용자 전적과 티어·캐릭터 통계를 비교하는 분석 로직 구현</div><div>OVHcloud VPS에 Docker 기반 Node.js 서비스 배포</div><div>Nginx 리버스 프록시와 도메인 연결을 포함한 운영 환경 구성</div></div><h4>문제와 해결</h4><div class="bullets"><div>서버리스 플랫폼 의존 구조를 직접 관리하는 VPS 환경으로 이전해 실행 환경과 배포 구성을 통제할 수 있도록 개선했습니다.</div><div>외부 기준 데이터가 일시적으로 불안정해도 서비스가 중단되지 않도록 자동 갱신, 캐시, 번들 데이터 폴백 구조를 적용했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/er-dodge" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://niah.site/" target="_blank" rel="noreferrer">서비스 바로가기 ↗</a></div></div></article>
 
         <article class="project" id="kiosk"><div class="project-art"><div><div class="project-no">PROJECT 02 · DEPLOYMENT SYSTEM</div><h3>Student Progress Kiosk</h3><p>학교 키오스크 PC에서 학생별 프로젝트 진행상황을 조회·관리하는 현장형 시스템</p></div><div class="mock-window"><div class="mock-nav"><span></span><span></span><span></span></div><div class="mock-row short"></div><div class="mock-row"></div><div class="mock-grid"><i></i><i></i><i></i></div></div></div><div class="project-body"><p class="desc">공개 키오스크와 관리자 화면이 같은 데이터베이스를 사용하도록 구성하고, 신규 PC에서도 같은 환경으로 실행할 수 있도록 애플리케이션과 DB를 컨테이너화했습니다.</p><div class="meta"><span>Node.js</span><span>MySQL</span><span>Docker Compose</span><span>Nginx</span></div><h4>담당 및 설계</h4><div class="bullets"><div>학생·프로젝트·진행단계·피드백 데이터 구조 설계</div><div>조회 화면과 관리자 CRUD 기능 구현</div><div>App·DB·Nginx를 Docker Compose로 구성</div><div>포트·환경변수·볼륨·서비스 의존성 설정</div></div><h4>문제와 해결</h4><div class="bullets"><div>PC마다 설치 환경이 달라지는 문제를 줄이기 위해 앱·DB·프록시를 하나의 Compose 구성으로 통합했습니다.</div><div>DB 초기화와 서비스 시작 순서에서 발생한 오류를 헬스체크와 의존성 설정으로 정리했습니다.</div></div><div class="project-links"><a href="https://github.com/dejava-daisky/kiosk" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://github.com/dejava-daisky/kiosk" target="_blank" rel="noreferrer">구성 파일 확인 →</a></div></div></article>
 
